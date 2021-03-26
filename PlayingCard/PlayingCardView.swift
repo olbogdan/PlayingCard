@@ -68,6 +68,11 @@ class PlayingCardView: UIView {
         UIColor.white.setFill()
         roundedRect.fill()
     }
+    
+    override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
+        setNeedsDisplay()
+        setNeedsLayout()
+    }
 }
 
 extension PlayingCardView {
