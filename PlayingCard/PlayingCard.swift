@@ -8,7 +8,7 @@
 import Foundation
 
 struct PlayingCard: CustomStringConvertible {
-    var description: String { return "\(rank)\(suit)"}
+    var description: String { return "\(rank)\(suit)" }
     
     var suit: Suit
     var rank: Rank
@@ -36,13 +36,13 @@ struct PlayingCard: CustomStringConvertible {
             case .face(let kind) where kind == "Q": return 12
             case .face(let kind) where kind == "K": return 13
             default:
-                 return 0
+                return 0
             }
         }
         
         static var all: [Rank] {
             var allRanks: [Rank] = [.ace]
-            for pips in 2...10 {
+            for pips in 2 ... 10 {
                 allRanks.append(Rank.numeric(pipsCount: pips))
             }
             allRanks += [face("J"), .face("Q"), .face("K")]
