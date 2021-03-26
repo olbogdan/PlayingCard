@@ -17,17 +17,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view opaque="NO" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Okm-PZ-mAs" customClass="PlayingCardView" customModule="PlayingCard" customModuleProvider="target">
-                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <rect key="frame" x="20" y="154" width="374" height="598"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" priority="250" constant="800" id="HK2-0J-5IL"/>
+                                    <constraint firstAttribute="width" secondItem="Okm-PZ-mAs" secondAttribute="height" multiplier="5:8" id="mGH-Tc-Eru"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Okm-PZ-mAs" secondAttribute="trailing" constant="20" id="6Y0-zF-8UE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Okm-PZ-mAs" secondAttribute="bottom" id="KDE-Tz-jk0"/>
-                            <constraint firstItem="Okm-PZ-mAs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="n05-NU-kdL"/>
-                            <constraint firstItem="Okm-PZ-mAs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ub1-6L-Mjq"/>
+                            <constraint firstItem="Okm-PZ-mAs" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="1TE-nk-UYe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Okm-PZ-mAs" secondAttribute="trailing" constant="20" id="6Y0-zF-8UE"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Okm-PZ-mAs" secondAttribute="bottom" constant="20" id="KDE-Tz-jk0"/>
+                            <constraint firstItem="Okm-PZ-mAs" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="gkL-XZ-Odh"/>
+                            <constraint firstItem="Okm-PZ-mAs" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="n05-NU-kdL"/>
+                            <constraint firstItem="Okm-PZ-mAs" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="ub1-6L-Mjq"/>
                         </constraints>
                     </view>
                 </viewController>

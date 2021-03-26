@@ -54,7 +54,7 @@ class PlayingCardView: UIView {
         super.layoutSubviews()
         configureCornerLabel(upperLeftCornerLabel)
         upperLeftCornerLabel.frame.origin = bounds.origin.offsetBy(dx: cornerOffset, dy: cornerOffset)
-        
+
         configureCornerLabel(lowerRightCornerLabel)
         lowerRightCornerLabel.frame.origin = CGPoint(x: bounds.maxX, y: bounds.maxY)
             .offsetBy(dx: -cornerOffset, dy: -cornerOffset)
@@ -68,7 +68,7 @@ class PlayingCardView: UIView {
         UIColor.white.setFill()
         roundedRect.fill()
     }
-    
+
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
         setNeedsDisplay()
         setNeedsLayout()
