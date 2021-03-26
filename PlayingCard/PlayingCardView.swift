@@ -34,6 +34,7 @@ class PlayingCardView: UIView {
     }
 
     private lazy var upperLeftCornerLabel = createCornerLabel()
+    private lazy var lowerRightCornerLabel = createCornerLabel()
 
     private func createCornerLabel() -> UILabel {
         let label = UILabel()
@@ -53,6 +54,12 @@ class PlayingCardView: UIView {
         super.layoutSubviews()
         configureCornerLabel(upperLeftCornerLabel)
         upperLeftCornerLabel.frame.origin = bounds.origin.offsetBy(dx: cornerOffset, dy: cornerOffset)
+        
+        configureCornerLabel(lowerRightCornerLabel)
+        lowerRightCornerLabel.frame.origin = CGPoint(x: bounds.maxX, y: bounds.maxY)
+            .offsetBy(dx: -cornerOffset, dy: -cornerOffset)
+            .offsetBy(dx: -lowerRightCornerLabel.frame.width, dy: -lowerRightCornerLabel.frame.height)
+        lowerRightCornerLabel.transform = CGAffineTransform.identity.rotated(by: CGFloat.pi)
     }
 
     override func draw(_ rect: CGRect) {
