@@ -9,14 +9,15 @@ import UIKit
 
 @IBDesignable
 class PlayingCardView: UIView {
+    @IBInspectable
     var rank: Int = 12 {
         didSet { setNeedsDisplay(); setNeedsLayout() }
     }
-
+    @IBInspectable
     var suit: String = "❤️" {
         didSet { setNeedsDisplay(); setNeedsLayout() }
     }
-
+    @IBInspectable
     var isFaceUp: Bool = true {
         didSet { setNeedsDisplay(); setNeedsLayout() }
     }
