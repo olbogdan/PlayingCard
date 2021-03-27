@@ -8,7 +8,7 @@
 import UIKit
 
 class PlayingCardView: UIView {
-    var rank: Int = 5 {
+    var rank: Int = 12 {
         didSet { setNeedsDisplay(); setNeedsLayout() }
     }
 
@@ -67,6 +67,11 @@ class PlayingCardView: UIView {
         roundedRect.addClip()
         UIColor.white.setFill()
         roundedRect.fill()
+        
+        let imageFrame = CGRect(x: rect.minX + rect.width/4 , y: rect.minY + rect.height/4, width: rect.width/2, height: rect.height/2)
+        if let faceCardImage = UIImage(named: rankString+suit) {
+            faceCardImage.draw(in: imageFrame)
+        }
     }
 
     override func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
