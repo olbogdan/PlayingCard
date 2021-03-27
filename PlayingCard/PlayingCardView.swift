@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 class PlayingCardView: UIView {
     var rank: Int = 12 {
         didSet { setNeedsDisplay(); setNeedsLayout() }
@@ -69,12 +70,12 @@ class PlayingCardView: UIView {
         roundedRect.fill()
 
         if isFaceUp {
-            if let faceCardImage = UIImage(named: rankString + suit) {
+            if let faceCardImage = UIImage(named: rankString + suit, in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
                 let imageFrame = CGRect(x: rect.minX + rect.width/4, y: rect.minY + rect.height/4, width: rect.width/2, height: rect.height/2)
                 faceCardImage.draw(in: imageFrame)
             }
         } else {
-            if let cardBackImage = UIImage(named: "cardback") {
+            if let cardBackImage = UIImage(named: "cardback", in: Bundle(for: self.classForCoder), compatibleWith: traitCollection) {
                 cardBackImage.draw(in: bounds)
             }
         }
