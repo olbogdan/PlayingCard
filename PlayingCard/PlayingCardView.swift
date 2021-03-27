@@ -67,10 +67,16 @@ class PlayingCardView: UIView {
         roundedRect.addClip()
         UIColor.white.setFill()
         roundedRect.fill()
-        
-        let imageFrame = CGRect(x: rect.minX + rect.width/4 , y: rect.minY + rect.height/4, width: rect.width/2, height: rect.height/2)
-        if let faceCardImage = UIImage(named: rankString+suit) {
-            faceCardImage.draw(in: imageFrame)
+
+        if isFaceUp {
+            if let faceCardImage = UIImage(named: rankString + suit) {
+                let imageFrame = CGRect(x: rect.minX + rect.width/4, y: rect.minY + rect.height/4, width: rect.width/2, height: rect.height/2)
+                faceCardImage.draw(in: imageFrame)
+            }
+        } else {
+            if let cardBackImage = UIImage(named: "cardback") {
+                cardBackImage.draw(in: bounds)
+            }
         }
     }
 
